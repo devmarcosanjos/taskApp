@@ -7,7 +7,7 @@ const TASKS = [
     status: "done",
   },
   {
-    id: 1,
+    id: 2,
     title: "Fazer projeto do mestrado",
     description: "Att do mestrado",
     time: "morning",
