@@ -1,0 +1,46 @@
+const TASKS = [
+  {
+    id: 1,
+    title: "Estudar",
+    description: "React FSC",
+    time: "morning",
+    status: "done",
+  },
+  {
+    id: 1,
+    title: "Fazer projeto do mestrado",
+    description: "Att do mestrado",
+    time: "morning",
+    status: "done",
+  },
+  {
+    id: 3,
+    title: "Fazer att da pos",
+    description: "terminar todo",
+    time: "affternoon",
+    status: "in_progress",
+  },
+  {
+    id: 4,
+    title: "Fazer att da pos",
+    description: "terminar todo",
+    time: "evening",
+    status: "in_progress",
+  },
+  {
+    id: 5,
+    title: "Correr",
+    description: "6000 passos a meta",
+    time: "evening",
+    status: "in_progress",
+  },
+  {
+    id: 6,
+    title: "Ir no mercado",
+    description: "fazer compras",
+    time: "evening",
+    status: "not_started",
+  },
+]
+
+export default TASKS
