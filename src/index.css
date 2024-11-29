@@ -2,6 +2,10 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        background: #F8F8F8;
+    }
+
     @font-face {
         font-family: "Poppins";
         src: url('/src/assets/fonts/Poppins/Poppins-Black.ttf') format('truetype');

@@ -1,4 +1,10 @@
+import Sidebar from "./components/Sidebar"
+
 function App() {
-  return <h1 className="mt-2 text-red-500">Teste</h1>
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  )
 }
 export default App
