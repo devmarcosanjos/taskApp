@@ -1,7 +1,9 @@
-import CheckIcon from "../assets/icons/check.svg?react"
-import DetailsIcon from "../assets/icons/details.svg?react"
-import LoaderIcon from "../assets/icons/loader-circle.svg?react"
-import TrashIcon from "../assets/icons/trash.svg?react"
+import {
+  CheckIcon,
+  DetailsIcon,
+  LoaderCicleIcon,
+  TrashIcon,
+} from "../assets/icons"
 import Button from "./Button"
 
 const TaskItem = ({ task, handleCheckboxClick, handleDeleteClick }) => {
@@ -28,7 +30,7 @@ const TaskItem = ({ task, handleCheckboxClick, handleDeleteClick }) => {
           />
           {task.status === "done" && <CheckIcon />}
           {task.status === "in_progress" && (
-            <LoaderIcon className="animate-spin" />
+            <LoaderCicleIcon className="animate-spin" />
           )}
         </label>
 

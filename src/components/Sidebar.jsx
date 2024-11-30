@@ -1,5 +1,4 @@
-import HomeIcon from "../assets/icons/home.svg?react"
-import TaskIcon from "../assets/icons/tasks.svg?react"
+import { HomeIcon, TaskIcon } from "../assets/icons"
 import SidebarButton from "./SidebarButton"
 
 const Sidebar = () => {
