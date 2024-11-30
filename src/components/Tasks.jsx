@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from "sonner"
 
 import AddIcon from "../assets/icons/add.svg?react"
 import CloudSunIcon from "../assets/icons/cloud-sun.svg?react"
@@ -21,10 +22,19 @@ const Tasks = () => {
     const newTasks = tasks.map((task) => {
       if (task.id !== taskId) return task
 
-      if (task.status === "not_started")
+      if (task.status === "not_started") {
+        toast.success("Tarefa iniciada com sucesso!")
         return { ...task, status: "in_progress" }
-      if (task.status === "in_progress") return { ...task, status: "done" }
-      if (task.status === "done") return { ...task, status: "not_started" }
+      }
+
+      if (task.status === "in_progress") {
+        toast.success("Tarefa concluída com sucesso!")
+        return { ...task, status: "done" }
+      }
+      if (task.status === "done") {
+        toast.success("Tarefa reiniciada com sucesso!")
+        return { ...task, status: "not_started" }
+      }
 
       return task
     })
@@ -36,6 +46,7 @@ const Tasks = () => {
     const newTasks = tasks.filter((task) => task.id !== taskId)
 
     setTasks(newTasks)
+    toast.success("Tarefa deletada com sucesso!")
   }
 
   return (
