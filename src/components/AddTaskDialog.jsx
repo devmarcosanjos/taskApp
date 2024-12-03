@@ -2,6 +2,7 @@ import { createPortal } from "react-dom"
 
 import Button from "./Button"
 import Input from "./Input"
+import SelectTime from "./SelectTime"
 
 const AddTaskDialog = ({ isOpen, handleClose }) => {
   if (!isOpen) return null
@@ -19,7 +20,8 @@ const AddTaskDialog = ({ isOpen, handleClose }) => {
             label="teste"
             id="tittle"
           />
-          <Input placeholder="Horario" label="Horario" id="time" />
+
+          <SelectTime />
           <Input
             placeholder="Descreva a tarefa"
             label="Descrição"
