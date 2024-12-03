@@ -9,6 +9,7 @@ import {
   TrashIcon,
 } from "../assets/icons"
 import TASKS from "../contants/tasks"
+import AddTaskDialog from "./AddTaskDialog"
 import Button from "./Button"
 import TaskItem from "./TaskItem"
 import TaskSeparator from "./TaskSeparator"
@@ -69,6 +70,7 @@ const Tasks = () => {
             Adicionar Tarefa
             <AddIcon />
           </Button>
+          <AddTaskDialog isOpen={true} />
         </div>
       </div>
 
