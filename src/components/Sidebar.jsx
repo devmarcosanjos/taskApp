@@ -1,4 +1,4 @@
-import { HomeIcon, TaskIcon } from "../assets/icons"
+import { HomeIcon, TasksIcon } from "../assets/icons"
 import SidebarButton from "./SidebarButton"
 
 const Sidebar = () => {
@@ -21,7 +21,7 @@ const Sidebar = () => {
           Ínicio
         </SidebarButton>
         <SidebarButton varient="selected">
-          <TaskIcon />
+          <TasksIcon />
           Minhas tarefas
         </SidebarButton>
       </div>
