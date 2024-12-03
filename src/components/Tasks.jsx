@@ -16,6 +16,7 @@ import TaskSeparator from "./TaskSeparator"
 
 const Tasks = () => {
   const [tasks, setTasks] = useState(TASKS)
+  const [addTaskDialogIsOpen, setAddTaskDialogIsOpen] = useState(false)
 
   const mornigTasks = tasks.filter((task) => task.time === "morning")
   const afternoonTasks = tasks.filter((task) => task.time === "affternoon")
@@ -66,11 +67,11 @@ const Tasks = () => {
             Limpar tarefas
             <TrashIcon />
           </Button>
-          <Button>
+          <Button onClick={() => setAddTaskDialogIsOpen(true)}>
             Adicionar Tarefa
             <AddIcon />
           </Button>
-          <AddTaskDialog isOpen={true} />
+          <AddTaskDialog isOpen={addTaskDialogIsOpen} />
         </div>
       </div>
 
