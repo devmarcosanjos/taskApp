@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useRef } from "react"
 import { createPortal } from "react-dom"
 import { v4 } from "uuid"
 
@@ -7,28 +7,44 @@ import Input from "./Input"
 import SelectTime from "./SelectTime"
 
 const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
-  const [title, setTitle] = useState("")
-  const [time, setTime] = useState("")
-  const [description, setDescription] = useState("")
-
-  useEffect(() => {
-    if (!isOpen) {
-      setTitle("")
-      setTime("morning")
-      setDescription("")
-    }
-  }, [isOpen])
+  const title = useRef()
+  const description = useRef()
+  const timeRef = useRef()
 
   const handleSaveClick = () => {
-    if (!title.trim() || !description.trim()) {
-      alert("Preencha todos os campos")
-      return
+    const newError = []
+
+    const titleValue = title.current.value
+    const descriptionValue = description.current.value
+    const time = timeRef.current.value
+
+    if (titleValue.length < 0) {
+      newError.push({
+        inputNane: "title",
+        message: "O campo título é obrigatório",
+      })
     }
+
+    if (descriptionValue.length < 0) {
+      newError.push({
+        inputNane: "description",
+        message: "O campo descrição é obrigatório",
+      })
+    }
+
+    if (time === "Selecione um horário") {
+      newError.push({
+        inputNane: "time",
+        message: "O campo horário é obrigatório",
+      })
+    }
+
     handleSubmit({
       id: v4(),
-      title,
-      time,
-      description,
+      title: title.current.value,
+      time: timeRef.current.value,
+      description: description.current.value,
+      status: "not_started",
     })
     handleClose()
   }
@@ -48,18 +64,16 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
             placeholder="Insira titulo da tarefa"
             label="teste"
             id="tittle"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            ref={title}
           />
 
-          <SelectTime onChange={(e) => setTime(e.target.value)} value={time} />
+          <SelectTime ref={timeRef} />
 
           <Input
             placeholder="Descreva a tarefa"
             label="Descrição"
             id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            ref={description}
           />
           <div className="flex gap-3">
             <Button
