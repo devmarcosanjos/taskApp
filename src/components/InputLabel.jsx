@@ -1,6 +1,6 @@
 const InputLabel = (props) => {
   return (
-    <labe className="text-sm font-semibold text-[#35383e]" {...props}>
+    <labe className="text-rand-dark-blue text-sm font-semibold" {...props}>
       {props.children}
     </labe>
   )

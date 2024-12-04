@@ -1,7 +1,7 @@
 const SidebarButton = ({ children, varient }) => {
   const getVatientedClasses = () => {
     if (varient === "default") {
-      return "text-[#35383E]"
+      return "text-rand-dark-blue"
     }
 
     if (varient === "selected") {

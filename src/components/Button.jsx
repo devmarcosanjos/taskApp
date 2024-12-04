@@ -14,7 +14,7 @@ const Button = ({
     }
 
     if (varient === "secundary") {
-      return "text-[#35383e] bg-[#EEE]"
+      return "text-rand-dark-blue bg-[#EEE]"
     }
   }
 
