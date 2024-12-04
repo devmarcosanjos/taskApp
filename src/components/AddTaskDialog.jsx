@@ -12,6 +12,7 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
   const timeRef = useRef()
 
   const handleSaveClick = () => {
+    if (!isOpen) return null
     const newError = []
 
     const titleValue = title.current.value
@@ -48,8 +49,6 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
     })
     handleClose()
   }
-
-  if (!isOpen) return null
 
   return createPortal(
     <div className="fixed bottom-0 left-0 top-0 flex h-screen w-screen items-center justify-center backdrop-blur-sm">

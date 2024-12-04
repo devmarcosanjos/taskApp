@@ -1,8 +1,9 @@
 import { forwardRef } from "react"
 
+import InputErrorMessage from "./InputErrorMessage"
 import InputLabel from "./InputLabel"
 
-const Input = forwardRef(({ label, ...rest }, ref) => {
+const Input = forwardRef(({ label, errorMessage, ...rest }, ref) => {
   return (
     <div className="flex flex-col space-y-1 text-left">
       <InputLabel htmlFor={rest.id}>{label}</InputLabel>
@@ -12,6 +13,9 @@ const Input = forwardRef(({ label, ...rest }, ref) => {
         ref={ref}
         {...rest}
       />
+      {InputErrorMessage && (
+        <InputErrorMessage>{errorMessage}</InputErrorMessage>
+      )}
     </div>
   )
 })
