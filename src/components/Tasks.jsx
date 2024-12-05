@@ -73,7 +73,7 @@ const Tasks = () => {
           <h2 className="py-4 text-xl">Minhas tarefas</h2>
         </div>
         <div className="flex items-center gap-3">
-          <Button varient="ghost">
+          <Button color="ghost">
             Limpar tarefas
             <TrashIcon />
           </Button>
