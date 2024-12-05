@@ -1,20 +1,20 @@
 const Button = ({
   children,
-  varient = "primary",
+  varient = "brand-primary",
   size = "small",
   className,
   ...rest
 }) => {
   const getVarientClasses = () => {
-    if (varient === "primary") {
+    if (varient === "brand-primary") {
       return "text-white bg-[#00abb5]"
     }
     if (varient === "ghost") {
-      return "text-[#818181] bg-trasparent"
+      return "text-brand-dark-gray bg-trasparent"
     }
 
     if (varient === "secundary") {
-      return "text-rand-dark-blue bg-[#EEE]"
+      return "text-brand-dark-blue bg-brand-light-gray"
     }
   }
 
