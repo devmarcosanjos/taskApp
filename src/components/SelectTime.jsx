@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { forwardRef } from "react"
 
 import InputLabel from "./InputLabel"
@@ -21,5 +22,9 @@ const SelectTime = forwardRef((props, ref) => {
 })
 
 SelectTime.displayName = "SelectTime"
+
+SelectTime.propTypes = {
+  label: PropTypes.string.isRequired,
+}
 
 export default SelectTime
