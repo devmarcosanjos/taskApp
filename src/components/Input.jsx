@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { forwardRef } from "react"
 
 import InputLabel from "./InputLabel"
@@ -17,4 +18,8 @@ const Input = forwardRef(({ label, ...rest }, ref) => {
 })
 
 Input.displayName = "Input"
+
+Input.prototype = {
+  label: PropTypes.string.isRequired,
+}
 export default Input
