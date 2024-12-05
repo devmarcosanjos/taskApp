@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { useRef } from "react"
 import { createPortal } from "react-dom"
 import { v4 } from "uuid"
@@ -94,6 +95,12 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
     </div>,
     document.body
   )
+}
+
+AddTaskDialog.prototype = {
+  isOpen: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 }
 
 export default AddTaskDialog
